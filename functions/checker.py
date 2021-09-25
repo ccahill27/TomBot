@@ -10,8 +10,10 @@ import datetime
 from datetime import timezone
 from datetime import timedelta, date
 
+from tweeter import tweeter
+
 def main_page_check(team,url,headers):
-    req = requests.get(home_url, headers)
+    req = requests.get(url, headers)
     soup = BeautifulSoup(req.content, 'html.parser')
     
     game_url = None
@@ -38,7 +40,7 @@ def game_page_check(game_url,headers,player,home_away):
     
     return goal_list
 
-def game_checker(game_url,headers,player,game_over=False):
+def game_checker(game_url,headers,player,home_away,filename,enemy,game_over=False):
     req = requests.get(game_url, headers)
     soup = BeautifulSoup(req.content, 'html.parser')
     

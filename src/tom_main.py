@@ -100,7 +100,7 @@ while True:
             else:
                 print('Game Started')
                 print(datetime.datetime.now())        
-            game_checker(game_url,headers,player,game_over=False)
+            game_checker(game_url,headers,player,home_away,filename,enemy,game_over=False)
         else:
             print('game over')
             print(datetime.datetime.now())
